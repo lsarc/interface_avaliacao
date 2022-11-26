@@ -1,20 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace d3_avaliacao.Model
+namespace interface_avaliacao.Data
 {
     public class User
     {
-        public string Name { get; set; } = string.Empty;
-
+        [Key]
         public string Email { get; set; } = string.Empty;
 
         public string Password { get; set; } = string.Empty;
 
-        public string Id { get; set; } = string.Empty;
-
     }
+
+
 }
