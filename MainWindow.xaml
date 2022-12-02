@@ -11,31 +11,33 @@
 
         <Label FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,60,0,0" Grid.Row="0" Content="Autenticação de Usuário" FontWeight="Bold" />
 
-        <Border Grid.Column="0" Margin="60">
-            <StackPanel Margin="5">
+        <Border Grid.Column="0" Margin="20">
+            <StackPanel Margin="0">
                 <Grid x:Name="LoginGrid">
-                    <Label Grid.Row="1" Grid.Column="0" Content="Email" Margin="90,150,210,-150" />
-                    <TextBox Grid.Row="1" Grid.Column="0" Text="{Binding Email}" Margin="90,181,80,-181" />
+                    <Label Grid.Column="0"  Content="Email" Margin="90,155,188,-155" />
+                    <TextBox Grid.Column="0" VerticalContentAlignment="Center" Text="{Binding Email}" Margin="90,181,90,-181" />
 
-                    <Label Grid.Row="3" Grid.Column="0" Content="Senha" Margin="85,282,193,-282" />
-                    <TextBox Grid.Row="1" Grid.Column="0" Text="{Binding Password}" Margin="90,313,80,-313"/>
+                    <Label Grid.Column="0" Content="Senha" Margin="90,287,188,-287" />
+                    <TextBox  Grid.Column="0" VerticalContentAlignment="Center" Text="{Binding Password}" FontFamily="pack://application:,,,/Resources/#password" Margin="90,313,90,-313"/>
 
                     <Button Width="150" Content="Acessar" Margin="100,421,100,-439" Click="CheckUser" Grid.RowSpan="1" />
                 </Grid>
 
-                <Popup Name="logInPopup" IsOpen="false" Closed="popClosed" StaysOpen="False">
 
-                    <TextBlock Name="logInText" Background="White"  Padding="30">
-                        Popup Text
-                    </TextBlock>
-
-                </Popup>
 
             </StackPanel>
 
-            
-        </Border>
 
+        </Border>
+        <Border Margin="144,300,144,300">
+            <Popup Name="logInPopup" IsOpen="false" Closed="popClosed" StaysOpen="False">
+
+                <TextBlock Name="logInText" Background="White"  Padding="30" VerticalAlignment="Center">
+                            Popup Text
+                </TextBlock>
+
+            </Popup>
+        </Border>
     </Grid>
 </Window>
 

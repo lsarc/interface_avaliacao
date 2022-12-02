@@ -40,6 +40,7 @@ namespace interface_avaliacao
             foreach (User user in context.Users.ToList())
             {
                 if ((user.Email != newUser.Email) || (user.Password != newUser.Password)){
+                    this.Opacity = 0.5;
                     logInText.Text = "Credenciais inválidas!";
                     logInPopup.IsOpen = true;
                     Title = "D7 - Avaliação - Erro";
@@ -47,6 +48,7 @@ namespace interface_avaliacao
                 }
                 else
                 {
+                    this.Opacity = 0.5;
                     logInText.Text = "Usuário autenticado!";
                     logInPopup.IsOpen = true;
                     Title = "D7 - Avaliação - Sucesso";
@@ -56,6 +58,7 @@ namespace interface_avaliacao
 
         private void popClosed(object sender, EventArgs e)
         {
+            this.Opacity = 1;
             logInPopup.IsOpen = false;
             Title = "D7 - Avaliação";
            
