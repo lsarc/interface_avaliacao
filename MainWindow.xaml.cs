@@ -32,21 +32,33 @@ namespace interface_avaliacao
             this.context = context;
             InitializeComponent();
             LoginGrid.DataContext = newUser;
+
         }
 
         private void CheckUser(object sender, RoutedEventArgs e)
         {
             foreach (User user in context.Users.ToList())
             {
-                if ((user.Email != LoginGrid.Email) || (user.Password != LoginGrid.Password)){
-                    Trace.WriteLine("fail");
-                    
+                if ((user.Email != newUser.Email) || (user.Password != newUser.Password)){
+                    logInText.Text = "Credenciais inválidas!";
+                    logInPopup.IsOpen = true;
+                    Title = "D7 - Avaliação - Erro";
+
                 }
                 else
                 {
-                    Trace.WriteLine("success");
+                    logInText.Text = "Usuário autenticado!";
+                    logInPopup.IsOpen = true;
+                    Title = "D7 - Avaliação - Sucesso";
                 }
             }
+        }
+
+        private void popClosed(object sender, EventArgs e)
+        {
+            logInPopup.IsOpen = false;
+            Title = "D7 - Avaliação";
+           
         }
     }
 }
